@@ -1,0 +1,12 @@
+etapa,n
+"Arquivos SKILL.md unicos (repo, caminho) retornados pela busca",974
+Repositorios distintos,578
+Repositorios com metadados obtidos,596
+... nao fork / nao mirror,596
+... linguagem principal Python,364
+"... com >=1 SKILL.md com indicio de teste (triagem, pre-codebook)",207
+... t0 identificado,207
+... t0 diferente do commit inicial,167
+... janela pos completa ate a coleta (C=0d),137
+... >= 20 commits em cada janela e nao arquivado,75
+... sem sinal de colecao/catalogo de skills (verificar manualmente),64

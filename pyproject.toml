@@ -1,0 +1,9 @@
+[project]
+name = "git-mining"
+version = "0.1.0"
+description = "CPS820 Grupo 4 - adocao de skills agenticas de teste (MSR)"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false

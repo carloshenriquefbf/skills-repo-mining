@@ -1,0 +1,39 @@
+# Parametros do estudo (protocolo v0.4). Toda alteracao deve ser registrada.
+
+[discovery]
+# Consultas a busca de codigo do GitHub (REST /search/code, so ramo padrao).
+# Cada consulta e particionada automaticamente por tamanho de arquivo quando
+# passa do teto de 1000 resultados (secao 5.3.4).
+# 25/11/2026: 'filename:SKILL.md test' removida (4.071.424 resultados, ~70 h a
+# 10 req/min e particoes saturadas em 1 byte). Ver data/raw/count_log.jsonl.
+queries = [
+  'filename:SKILL.md pytest',
+]
+max_file_size = 400000   # bytes; a busca de codigo nao indexa arquivos > 384 KB
+
+# Piloto (`--pilot`): 1 pagina (100 resultados) por faixa de tamanho, por consulta.
+# Faixas: 0..2000, 2001..4000, ..., e a ultima vai ate max_file_size.
+pilot_band_bytes = 2000
+pilot_bands = 10
+
+# Consultas candidatas: so contadas por `python -m gm count` (1 req cada),
+# para decidir quais entram em `queries`.
+count_candidates = [
+  'filename:SKILL.md unittest',
+  'filename:SKILL.md tdd',
+  'filename:SKILL.md "test-driven"',
+  'filename:SKILL.md coverage',
+]
+
+[filters]
+primary_language = "Python"
+min_commits_per_window = 20      # secao 5.3.1
+
+[windows]
+window_days = 90                 # janela pre e pos (glossario)
+grace_days = 0                   # carencia C: PROVISORIO, definir no piloto
+
+[screening]
+# Triagem por palavra-chave em name/description do SKILL.md.
+# NAO substitui o codebook (Anexo A): serve so para priorizar a codificacao.
+test_regex = '(?i)\b(tests?|testing|pytest|unittest|tdd|test[- ]driven|coverage|e2e|end[- ]to[- ]end|playwright|selenium|mutation|hypothesis|fixtures?|qa)\b'

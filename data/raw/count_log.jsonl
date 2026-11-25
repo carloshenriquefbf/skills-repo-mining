@@ -1,0 +1,5 @@
+{"query": "filename:SKILL.md pytest", "kind": "coleta", "total_count": 146176, "incomplete_results": false, "counted_at": "2026-11-25T13:50:09Z"}
+{"query": "filename:SKILL.md unittest", "kind": "candidata", "total_count": 35072, "incomplete_results": false, "counted_at": "2026-11-25T13:50:11Z"}
+{"query": "filename:SKILL.md tdd", "kind": "candidata", "total_count": 165632, "incomplete_results": false, "counted_at": "2026-11-25T13:50:19Z"}
+{"query": "filename:SKILL.md \"test-driven\"", "kind": "candidata", "total_count": 67968, "incomplete_results": false, "counted_at": "2026-11-25T13:50:22Z"}
+{"query": "filename:SKILL.md coverage", "kind": "candidata", "total_count": 865280, "incomplete_results": false, "counted_at": "2026-11-25T13:50:24Z"}
